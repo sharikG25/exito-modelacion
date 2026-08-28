@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: exito_simulacion_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: User
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: exito_simulacion
+    ports:
+      - "5433:5432"
+    volumes:
+      - exito_simulacion_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U User -d exito_simulacion"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  exito_simulacion_pgdata:

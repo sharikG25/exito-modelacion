@@ -1,0 +1,160 @@
+:root {
+  /* Color */
+  --bg: #0f1420;
+  --panel: #1a2233;
+  --panel-raised: #212b40;
+  --border: #2b3650;
+  --accent-flow: #2dd4bf;      /* clientes en movimiento */
+  --accent-wait: #f5a623;      /* espera / alerta */
+  --accent-danger: #ef5b5b;
+  --text: #e7eaf0;
+  --text-muted: #8a93a8;
+
+  /* Tipografía */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Espaciado */
+  --radius: 10px;
+  --gap: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent-flow);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input, select {
+  font-family: var(--font-mono);
+}
+
+/* Utilidades compartidas entre páginas de modelos */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.field input, .field select, .field textarea {
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.55rem 0.7rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid var(--accent-flow);
+  outline-offset: 1px;
+}
+
+.field .hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.btn-primary {
+  background: var(--accent-flow);
+  color: #0b1420;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-banner {
+  background: rgba(239, 91, 91, 0.12);
+  border: 1px solid var(--accent-danger);
+  color: var(--accent-danger);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.metric-card {
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+.metric-card .value {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent-flow);
+}
+
+.metric-card .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

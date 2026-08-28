@@ -1,0 +1,253 @@
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resultados {
+  min-height: 200px;
+}
+
+.modelo-usado {
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.modelo-usado strong {
+  color: var(--text);
+}
+
+.subtitulo {
+  font-size: 0.85rem;
+  margin: 1.5rem 0 0.75rem 0;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.barra {
+  flex: 1;
+  background: var(--accent-flow);
+  border-radius: 3px 3px 0 0;
+  min-height: 4px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.barra-valor {
+  position: absolute;
+  top: -1.2rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.lista-llegadas {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  word-break: break-word;
+}
+
+.matriz {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.matriz th {
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.matriz th:first-child {
+  text-align: left;
+}
+
+.matriz td {
+  padding: 0.2rem;
+}
+
+.matriz input {
+  width: 100%;
+  min-width: 0;
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.35rem 0.3rem;
+  color: var(--text);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.recorrido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.chip {
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+}
+
+.chip .flecha {
+  color: var(--accent-flow);
+  margin-left: 0.4rem;
+}
+
+.barras.dos-series {
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.par {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 100%;
+}
+
+.par .barra {
+  flex: 1;
+  min-height: 4px;
+}
+
+.barra.real {
+  background: var(--accent-flow);
+}
+
+.barra.ajustado {
+  background: var(--accent-wait);
+}
+
+.leyenda {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.leyenda .cuadro {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.leyenda .cuadro.real {
+  background: var(--accent-flow);
+}
+
+.leyenda .cuadro.ajustado {
+  background: var(--accent-wait);
+}
+
+.tabla-resultado {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.tabla-resultado th, .tabla-resultado td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabla-resultado th {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tabla-resultado td.num {
+  font-family: var(--font-mono);
+  color: var(--accent-flow);
+}
+
+.tabla-resultado tr.mejor td {
+  background: rgba(45, 212, 191, 0.08);
+}
+
+.tabla-resultado tr.mejor td:first-child {
+  color: var(--accent-flow);
+  font-weight: 600;
+}
+
+.nota-extra {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--accent-wait);
+}
+
+.veredicto {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0 0;
+  font-style: italic;
+}
+
+.veredicto.ok {
+  color: var(--accent-flow);
+  font-style: normal;
+}
+
+.veredicto.alerta {
+  color: var(--accent-wait);
+  font-style: normal;
+}
+
+.modo-hint {
+  margin-top: -0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+.tabla-scroll .tabla-resultado {
+  min-width: 600px;
+}
