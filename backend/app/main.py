@@ -16,7 +16,10 @@ app = FastAPI(title="Simulación Almacenes Éxito - API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200"],  # app Angular en desarrollo
+    allow_origins=[
+        "http://localhost:4200",
+        "https://exito-modelacion-frontend.onrender.com",
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
